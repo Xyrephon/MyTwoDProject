@@ -2,6 +2,7 @@ package grid.view;
 
 import javax.swing.JFrame;
 import grid.controller.GridController;
+import java.awt.Dimension;
 
 public class GridFrame extends JFrame 
 {
@@ -20,6 +21,7 @@ public class GridFrame extends JFrame
 	{
 		this.setContentPane(appPanel);
 		this.setTitle("2D Project");
+		this.setSize(new Dimension(700,700));
 		this.setVisible(true);
 	}
 
