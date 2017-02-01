@@ -25,6 +25,10 @@ public class GridPanel extends JPanel
 		this.baseController = baseController;
 		this.baseLayout = new SpringLayout();
 		this.columnField = new JTextField(5);
+		this.rowLabel = new JLabel("Row: ");
+		this.columnLabel = new JLabel("Column: ");
+		this.rowField = new JTextField(5);
+		this.inputField = new JTextField(5);
 		
 	setupTable();
 	setupPanel();
@@ -40,10 +44,6 @@ public class GridPanel extends JPanel
 		gridTable = new JTable();
 		gridTable.setModel(data);
 		gridPane = new JScrollPane();
-		baseLayout.putConstraint(SpringLayout.NORTH, gridPane, 0, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, gridPane, 10, SpringLayout.WEST, columnField);
-		baseLayout.putConstraint(SpringLayout.SOUTH, gridPane, 120, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.EAST, gridPane, 4, SpringLayout.EAST, this);
 		gridPane.setViewportView(gridTable);
 		
 	}
@@ -54,12 +54,29 @@ public class GridPanel extends JPanel
 		this.setMinimumSize(new Dimension(700,700));
 		this.setBackground(Color.CYAN);
 		this.add(gridPane);
-		this.add(columnField);
+		this.add(rowField);
+		this.add(rowLabel);
+		this.add(columnLabel);
+		this.add(inputField);
+		add(columnField);
 	}
 	
 	private void setupLayout()
 	{
-		
+		baseLayout.putConstraint(SpringLayout.NORTH, gridPane, 10, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, gridPane, 230, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, gridPane, -33, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, gridPane, -28, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, columnField, 191, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, rowLabel, 162, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, columnLabel, 196, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, columnLabel, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, rowField, -117, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, columnField, 0, SpringLayout.WEST, rowField);
+		baseLayout.putConstraint(SpringLayout.WEST, rowField, 69, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, rowLabel, -6, SpringLayout.WEST, rowField);
+		baseLayout.putConstraint(SpringLayout.NORTH, inputField, 6, SpringLayout.SOUTH, columnField);
+		baseLayout.putConstraint(SpringLayout.WEST, inputField, 0, SpringLayout.WEST, rowField);
 	}
 	
 	private void setupListeners()
