@@ -23,4 +23,24 @@ public class GridFrame extends JFrame
 		this.setVisible(true);
 	}
 
+	public GridController getBaseController() 
+	{
+		return baseController;
+	}
+
+	public void setBaseController(GridController baseController) 
+	{
+		this.baseController = baseController;
+	}
+
+	public GridPanel getAppPanel() 
+	{
+		return appPanel;
+	}
+
+	public void setAppPanel(GridPanel appPanel) 
+	{
+		this.appPanel = appPanel;
+	}
+
 }
