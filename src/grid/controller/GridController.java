@@ -24,7 +24,7 @@ public class GridController
 		{
 			for (int col = 0; col < grid[0].length; col ++)
 			{
-				grid[row][col] = new Computer();
+				grid[row][col] = new Computer("Windows");
 			}
 		}
 	}
