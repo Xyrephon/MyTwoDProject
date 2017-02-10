@@ -1,6 +1,7 @@
 package grid.view;
 
 import javax.swing.*;
+import grid.model.Computer;
 import grid.controller.GridController;
 import javax.swing.table.*;
 import java.awt.Dimension;
